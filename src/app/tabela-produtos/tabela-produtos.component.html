@@ -1,10 +1,16 @@
 <div class="container">
     <h3>Tabela de Produtos</h3>
-    <h4 *ngIf="lista.length ==0">
+    <div class="mb-3">
+        <label for="nomePesquisa" class="form-label">PESQUISA:</label>
+        <input type="text" [(ngModel)]="nomePesquisa" id="nomePesquisa"
+            class="form-control" placeholder="digite nome para pesquisar ..">
+    </div>
+
+    <h4 *ngIf="(lista | filtroPesquisa:nomePesquisa).length ==0">
         Não há produtos cadastrados!
     </h4>
 
-    <table class="table table-striped" *ngIf="lista.length > 0">
+    <table class="table table-striped" *ngIf="(lista | filtroPesquisa:nomePesquisa).length  > 0">
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let produto of lista">
+            <tr *ngFor="let produto of (lista | filtroPesquisa:nomePesquisa)">
                 <td>{{produto.id}}</td>
                 <td>{{produto.nome}}</td>
                 <td>{{produto.preco | moeda}}</td>

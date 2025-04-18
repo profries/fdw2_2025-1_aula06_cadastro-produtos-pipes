@@ -9,6 +9,7 @@ import { ProdutoService } from '../produto.service';
   styleUrl: './tabela-produtos.component.css'
 })
 export class TabelaProdutosComponent {
+  nomePesquisa?: string;
   lista: Produto[] = [];
 
   constructor(private produtoService: ProdutoService){
