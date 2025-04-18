@@ -9,6 +9,7 @@ import { TabelaProdutosComponent } from './tabela-produtos/tabela-produtos.compo
 import { FormProdutosComponent } from './form-produtos/form-produtos.component';
 import { CardProdutoComponent } from './card-produto/card-produto.component';
 import { ListCardProdutosComponent } from './list-card-produtos/list-card-produtos.component';
+import { MoedaPipe } from './moeda.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListCardProdutosComponent } from './list-card-produtos/list-card-produt
     TabelaProdutosComponent,
     FormProdutosComponent,
     CardProdutoComponent,
-    ListCardProdutosComponent
+    ListCardProdutosComponent,
+    MoedaPipe
   ],
   imports: [
     BrowserModule,
